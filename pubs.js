@@ -1,5 +1,5 @@
 /* Publications: single source for the home page (selected) and publications.html (full list).
-   To add a paper: add an entry below. Optional thumbnail: images/pubs/<id>.png (first page of the paper, ~440x570). */
+   To add a paper: add an entry below. Links shown when set: url (Paper), arxiv, video. Optional thumbnail: images/pubs/<id>.png (first page of the paper, ~440x570). */
 const ME = "H. Chakraa";
 const COAUTHOR_LINKS = {
   "D. Deplano": "https://diegodeplano.github.io/",
@@ -11,6 +11,7 @@ const PUBS = [
     authors: ["H. Chakraa", "F. Guérin", "E. Leclercq", "D. Lefebvre"],
     venue: "IEEE Robotics and Automation Practice", short: "IEEE RA-P",
     url: "https://ieeexplore.ieee.org/document/11753960", arxiv: "https://arxiv.org/abs/2506.20626",
+    video: "",  // e.g. YouTube link of the field / HIL video
     bib: `@article{chakraa2026task,
   author  = {Chakraa, Hamza and Gu{\\'e}rin, Fran{\\c{c}}ois and Leclercq, Edouard and Lefebvre, Dimitri},
   title   = {Task Allocation of {UAVs} for Monitoring Missions via Hardware-in-the-Loop Simulation and Experimental Validation},
@@ -95,19 +96,20 @@ const PUBS = [
   { id: "J2", type: "journal", year: 2023,
     title: "A Centralized Task Allocation Algorithm for a Multi-Robot Inspection Mission With Sensing Specifications",
     authors: ["H. Chakraa", "E. Leclercq", "F. Guérin", "D. Lefebvre"],
-    venue: "IEEE Access", short: "IEEE Access",
+    venue: "IEEE Access, 11:99935–99949", short: "IEEE Access",
     bib: `@article{chakraa2023centralized,
   author  = {Chakraa, Hamza and Leclercq, Edouard and Gu{\\'e}rin, Fran{\\c{c}}ois and Lefebvre, Dimitri},
   title   = {A Centralized Task Allocation Algorithm for a Multi-Robot Inspection Mission With Sensing Specifications},
   journal = {IEEE Access},
+  volume  = {11}, pages = {99935--99949},
   year    = {2023}
 }` },
   { id: "C1", type: "conference", year: 2023,
     title: "A Multi-Robot Mission Planner by Means of Beam Search Approach and 2-Opt Local Search",
-    authors: ["H. Chakraa", "F. Guérin", "E. Leclercq", "D. Lefebvre"],
+    authors: ["H. Chakraa", "E. Leclercq", "F. Guérin", "D. Lefebvre"],
     venue: "9th International Conference on Control, Decision and Information Technologies (CoDIT)", short: "CoDIT",
     bib: `@inproceedings{chakraa2023beam,
-  author    = {Chakraa, Hamza and Gu{\\'e}rin, Fran{\\c{c}}ois and Leclercq, Edouard and Lefebvre, Dimitri},
+  author    = {Chakraa, Hamza and Leclercq, Edouard and Gu{\\'e}rin, Fran{\\c{c}}ois and Lefebvre, Dimitri},
   title     = {A Multi-Robot Mission Planner by Means of Beam Search Approach and 2-Opt Local Search},
   booktitle = {International Conference on Control, Decision and Information Technologies (CoDIT)},
   year      = {2023}
@@ -126,6 +128,7 @@ function actions(p) {
   let h = `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
   if (p.url) h += `<a href="${p.url}" target="_blank" rel="noopener">Paper</a>`;
   if (p.arxiv) h += `<a href="${p.arxiv}" target="_blank" rel="noopener">arXiv</a>`;
+  if (p.video) h += `<a href="${p.video}" target="_blank" rel="noopener">Video</a>`;
   return `<div class="actions">${h}</div>`;
 }
 function titleHTML(p) {

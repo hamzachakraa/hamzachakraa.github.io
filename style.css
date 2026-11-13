@@ -127,3 +127,6 @@ pre.bib { margin: 10px 0 0; padding: 10px 12px; font-size: 12px; line-height: 1.
 /* footer: light */
 .site-footer { margin-top: 80px; border-top: 1px solid var(--line); }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 24px 36px; font-size: 14px; color: var(--muted); }
+
+/* inner pages */
+.page-title { font: 600 44px/1.1 var(--serif); margin: 4px 0 28px; display: block; }
