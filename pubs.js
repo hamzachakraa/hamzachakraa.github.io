@@ -135,16 +135,18 @@ function titleHTML(p) {
 
 function renderSelected(el) {
   el.innerHTML = PUBS.filter(p => p.selected).map(p => `
-    <article class="card" data-id="${p.id}">
+    <article class="sel" data-id="${p.id}">
       <div class="thumb">
         <img src="images/pubs/${p.id}.png" alt="" loading="lazy" onerror="this.remove()">
-        <div class="thumb-fallback"><span>${esc(p.short)}</span><b>${p.year}</b></div>
+        <span>${p.year}</span>
       </div>
-      <p class="meta">${esc(p.short)} · ${p.year}</p>
-      ${actions(p)}
-      <h3>${titleHTML(p)}</h3>
-      <p class="authors">${authorsHTML(p.authors)}</p>
-      <pre class="bib" hidden>${esc(p.bib)}</pre>
+      <div>
+        <p class="badge">${esc(p.short)} · ${p.year}</p>
+        <h3>${titleHTML(p)}</h3>
+        <p class="authors">${authorsHTML(p.authors)}</p>
+        ${actions(p)}
+        <pre class="bib" hidden>${esc(p.bib)}</pre>
+      </div>
     </article>`).join("");
 }
 
