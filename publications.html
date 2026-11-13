@@ -2,97 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Publications · Hamza Chakraa</title>
-<meta name="description" content="Hamza Chakraa — multi-robot systems and aerial robotics, ENSTA, Institut Polytechnique de Paris.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<meta name="description" content="Publications of Hamza Chakraa: multi-robot task allocation, multi-UAV guidance, multi-agent reinforcement learning.">
+<meta name="theme-color" content="#23262b">
 <link rel="stylesheet" href="style.css">
-<style>body{margin:0}img{max-width:100%}</style>
+<script src="pubs.js" defer></script>
 </head>
 <body>
-<header class="bar">
-  <div class="bar-in">
-    <a class="brand" href="index.html">Hamza Chakraa <span>ENSTA · IP Paris</span></a>
-    <nav class="nav">
-      <a href="research.html">Research</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="site-title" href="./">Hamza Chakraa</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./">Home</a>
       <a href="publications.html" aria-current="page">Publications</a>
-      <a href="talks.html">Talks</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="people.html">People</a>
+      <a href="./#research">Research</a>
+      <a href="./#teaching">Teaching</a>
+      <a href="./#team">Team</a>
     </nav>
   </div>
 </header>
 
-<div class="wrap" id="top">
-  <aside class="rail">
-    <div class="photo">
-      <!-- Remplacer par : <img src="hamza.jpg" alt="Hamza Chakraa"> -->
-      <span class="init">HC</span>
-      <span class="hint">photo</span>
+<main>
+  <section class="page-head">
+    <div class="container">
+      <h1>Publications</h1>
+      <p>Also on <a href="https://orcid.org/0000-0002-8776-4235" target="_blank" rel="noopener">ORCID</a>.</p>
     </div>
-    <div class="links">
-      <div class="lbl">Contact</div>
-      <span id="email">prenom.nom@ensta.fr</span>
-      <a href="#">Google Scholar</a>
-      <a href="#">GitHub</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">ORCID</a>
-    </div>
-    <div class="coord">
-      U2IS, ENSTA<br>
-      828 bd des Maréchaux<br>
-      91120 Palaiseau, France<br>
-      48.711° N · 2.207° E
-    </div>
-  </aside>
+  </section>
+  <div class="container" id="all-pubs"></div>
+</main>
 
-  <main>
+<footer class="site-footer">
+  <div class="container">Last update: November 2026</div>
+</footer>
 
-      <a class="back" href="index.html">← Home</a>
-      <div class="role">Publications</div>
-      <h1 class="page-title">Publications</h1>
-      <div class="filters" role="group" aria-label="Filter publications">
-        <button id="f-all" type="button" data-k="all" aria-pressed="true">All</button>
-        <button id="f-journal" type="button" data-k="journal" aria-pressed="false">Journals</button>
-        <button id="f-conf" type="button" data-k="conference" aria-pressed="false">Conferences</button>
-      </div>
-      <ul class="pubs" id="pubs"></ul>
-      <p class="more">Full list on <a href="index.html">Google Scholar</a>.</p>
-  </main>
-</div>
-<script>const PUBS = [
-  { year: 2026, kind: "conference", title: "", venue: "IMAV 2026 — decentralized PSO guidance for multi-UAV wildfire monitoring" },
-  { year: null, kind: "journal",    title: "", venue: "Robotics and Autonomous Systems (Elsevier)" },
-  { year: null, kind: "journal",    title: "", venue: "IEEE Access" },
-  { year: null, kind: "journal",    title: "", venue: "Transactions of the Institute of Measurement and Control" },
-  { year: null, kind: "conference", title: "", venue: "ICUAS" },
-  { year: null, kind: "conference", title: "", venue: "AIAA SciTech" },
-  { year: null, kind: "conference", title: "", venue: "IEEE CASE" },
-  { year: null, kind: "conference", title: "", venue: "CoDIT" },
-];
-const ul = document.getElementById("pubs");
-function render(k) {
-  ul.innerHTML = "";
-  PUBS.filter(p => k === "all" || p.kind === k).forEach(p => {
-    const li = document.createElement("li"); li.className = "pub";
-    const y = document.createElement("div"); y.className = "pub-year"; y.textContent = p.year ?? "—";
-    const b = document.createElement("div");
-    const t = document.createElement("div");
-    t.className = "pub-title" + (p.title ? "" : " todo");
-    t.textContent = p.title || "Title to add";
-    const v = document.createElement("div"); v.className = "pub-venue"; v.textContent = p.venue;
-    const tag = document.createElement("span"); tag.className = "pub-kind"; tag.textContent = p.kind;
-    v.appendChild(tag);
-    b.append(t, v); li.append(y, b); ul.appendChild(li);
-  });
-}
-document.querySelectorAll(".filters button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filters button").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
-    render(btn.dataset.k);
-  });
-});
-render("all");</script>
 </body>
 </html>
