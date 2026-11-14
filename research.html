@@ -6,7 +6,7 @@
 <title>Research · Hamza Chakraa</title>
 <meta name="description" content="Hamza Chakraa, Assistant Professor at ENSTA (U2IS), Institut Polytechnique de Paris: multi-robot task allocation, multi-UAV guidance, multi-agent reinforcement learning.">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -50,7 +50,25 @@
     </div>
   </section>
 
+  <section>
+    <h2>Videos</h2>
+    <div class="videos" id="videos"></div>
+  </section>
+
 </main>
+<script>
+/* Videos: add one entry per video. For YouTube, use the ID after "watch?v=" (or after youtu.be/). */
+const VIDEOS = [
+  // { youtube: "XXXXXXXXXXX", title: "Field validation of UAV task allocation (Laugui Concept, Normandy)", paper: "J4" },
+];
+const v = document.getElementById("videos");
+v.innerHTML = VIDEOS.length
+  ? VIDEOS.map(x => `<figure class="video">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/${x.youtube}" title="${x.title}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <figcaption>${x.title}${x.paper ? ` <a href="publications.html#${x.paper}">[${x.paper}]</a>` : ""}</figcaption>
+    </figure>`).join("")
+  : `<p class="empty">Flight videos coming soon.</p>`;
+</script>
 
 <footer class="site-footer">
   <div class="container foot">

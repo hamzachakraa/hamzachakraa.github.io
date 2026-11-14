@@ -138,11 +138,15 @@ function titleHTML(p) {
 
 function renderSelected(el) {
   el.innerHTML = PUBS.filter(p => p.selected).map(p => `
-    <article class="sel" data-id="${p.id}">
-      <div class="thumb">
+    <article class="sel t-${p.type}" data-id="${p.id}">
+      <a class="page" href="${mainLink(p) || "publications.html#" + p.id}" ${mainLink(p) ? 'target="_blank" rel="noopener"' : ""} aria-label="${esc(p.title)}">
         <img src="images/pubs/${p.id}.png" alt="" loading="lazy" onerror="this.remove()">
-        <span>${p.year}</span>
-      </div>
+        <div class="mock" aria-hidden="true">
+          <p class="m-title">${esc(p.title)}</p>
+          <p class="m-auth">${p.authors.join(", ")}</p>
+          <div class="m-cols"><i></i><i></i></div>
+        </div>
+      </a>
       <div>
         <p class="badge">${esc(p.short)} · ${p.year}</p>
         <h3>${titleHTML(p)}</h3>
@@ -159,7 +163,7 @@ function renderAll(el) {
     const items = PUBS.filter(p => p.type === k);
     if (!items.length) return "";
     return `<section class="pub-group"><h2>${label}</h2><ol class="pub-list">` + items.map(p => `
-      <li id="${p.id}" data-id="${p.id}">
+      <li id="${p.id}" data-id="${p.id}" class="t-${p.type}">
         <span class="label">[${p.id}]</span>
         <div>
           <p class="t">${titleHTML(p)}</p>
