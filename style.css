@@ -163,7 +163,7 @@ main { flex: 1 0 auto; width: 100%; }
 .profile-links { gap: 6px; }
 
 /* selected publications: row cards with a small first-page thumbnail */
-.sel { display: grid !important; grid-template-columns: 92px 1fr; gap: 22px; align-items: start; }
+.sel { display: grid !important; grid-template-columns: 124px 1fr; gap: 22px; align-items: start; }
 .sel .page { position: relative; display: block; aspect-ratio: 8.5/11; border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--c); box-shadow: 0 8px 18px -12px rgba(16,24,40,.45); transition: transform .18s; }
 .sel:hover .page { transform: rotate(-1.5deg) scale(1.03); }
 .sel .page img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; z-index: 1; background: #fff; }

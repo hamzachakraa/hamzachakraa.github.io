@@ -18,10 +18,21 @@ const PUBS = [
   journal = {IEEE Robotics and Automation Practice},
   year    = {2026}
 }` },
+  { id: "C6", type: "conference", year: 2026,
+    title: "A Multi-View Multi-LiDAR Synchronised Setup for Smoke Plume Data Acquisition: A Simulated Drone Swarm Observation Case Study",
+    authors: ["G. Pérez", "L. Denis", "H. Chakraa", "M. Bronz"],
+    venue: "17th International Micro Air Vehicle Conference and Competition (IMAV), Strasbourg, France", short: "IMAV",
+    bib: `@inproceedings{perez2026lidar,
+  author    = {P{\\'e}rez, G. and Denis, L. and Chakraa, Hamza and Bronz, Murat},
+  title     = {A Multi-View Multi-{LiDAR} Synchronised Setup for Smoke Plume Data Acquisition: A Simulated Drone Swarm Observation Case Study},
+  booktitle = {17th International Micro Air Vehicle Conference and Competition (IMAV)},
+  year      = {2026}
+}` },
   { id: "C5", type: "conference", year: 2026, selected: true,
     title: "Decentralized PSO-Based Guidance for Multi-UAV Wildfire Monitoring and Frontier Tracking",
     authors: ["H. Chakraa", "M. Feurgard", "M. Bronz"],
     venue: "17th International Micro Air Vehicle Conference (IMAV), Strasbourg, France", short: "IMAV",
+    url: "https://www.imavs.org/pdf/imav.2026.18",
     bib: `@inproceedings{chakraa2026pso,
   author    = {Chakraa, Hamza and Feurgard, M. and Bronz, Murat},
   title     = {Decentralized {PSO}-Based Guidance for Multi-{UAV} Wildfire Monitoring and Frontier Tracking},
@@ -52,12 +63,14 @@ const PUBS = [
     title: "A Gossip-Based Approach for Measurement Task Allocation and Routing in Multi-Robot Systems with Heterogeneous Sensing",
     authors: ["H. Chakraa", "D. Deplano", "C. Seatzu", "D. Lefebvre", "M. Franceschelli"],
     venue: "21st IEEE International Conference on Automation Science and Engineering (CASE), Los Angeles, USA, pp. 2895–2900", short: "IEEE CASE",
+    url: "https://doi.org/10.1109/CASE58245.2025.11164022", code: "https://github.com/chakraah/gossip-planner",
     bib: `@inproceedings{chakraa2025gossip,
   author    = {Chakraa, Hamza and Deplano, Diego and Seatzu, Carla and Lefebvre, Dimitri and Franceschelli, Mauro},
   title     = {A Gossip-Based Approach for Measurement Task Allocation and Routing in Multi-Robot Systems with Heterogeneous Sensing},
   booktitle = {IEEE International Conference on Automation Science and Engineering (CASE)},
   pages     = {2895--2900},
-  year      = {2025}
+  year      = {2025},
+  doi       = {10.1109/CASE58245.2025.11164022}
 }` },
   { id: "J3", type: "journal", year: 2025,
     title: "Integrating Collision Avoidance Strategies into Multi-Robot Task Allocation for Inspection",
@@ -128,6 +141,7 @@ function actions(p) {
   let h = `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
   if (p.url) h += `<a href="${p.url}" target="_blank" rel="noopener">Paper</a>`;
   if (p.arxiv) h += `<a href="${p.arxiv}" target="_blank" rel="noopener">arXiv</a>`;
+  if (p.code) h += `<a href="${p.code}" target="_blank" rel="noopener">Code</a>`;
   if (p.video) h += `<a href="${p.video}" target="_blank" rel="noopener">Video</a>`;
   return `<div class="actions">${h}</div>`;
 }
