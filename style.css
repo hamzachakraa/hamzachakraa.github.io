@@ -492,3 +492,13 @@ h2 { letter-spacing: -.024em; }
 .news-list li:nth-child(3n+2) time,
 .news-list li:nth-child(3n+3) time { color: #245b78; background: #e8f0f3; }
 .t-journal, .t-conference, .t-thesis { --c: var(--accent); --cs: var(--accent-soft); }
+
+/* Selected publications: key figure instead of the first page */
+.sel { grid-template-columns: 240px 1fr !important; }
+.sel .page { aspect-ratio: 16/10; border-top-width: 1px; border-radius: 8px; }
+.sel .page img { object-fit: cover; object-position: center; }
+.sel:hover .page { transform: scale(1.02); }
+.sel.is-page { grid-template-columns: 124px 1fr !important; }
+.sel.is-page .page { aspect-ratio: 8.5/11; }
+.sel.is-page .page img { object-position: top; }
+@media (max-width: 640px) { .sel { grid-template-columns: 1fr !important; } .sel .page { max-width: 420px; } }

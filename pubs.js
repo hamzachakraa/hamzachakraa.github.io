@@ -1,5 +1,5 @@
 /* Publications: single source for the home page (selected) and publications.html (full list).
-   To add a paper: add an entry below. Links shown when set: url (Paper), arxiv, video. Optional thumbnail: images/pubs/<id>.png (first page of the paper, ~440x570). */
+   To add a paper: add an entry below. Links shown when set: url (Paper), arxiv, github, video. Empty strings = link to add. Optional thumbnail: images/pubs/<id>.png (first page of the paper, ~440x570). */
 const ME = "H. Chakraa";
 const COAUTHOR_LINKS = {
   "D. Deplano": "https://diegodeplano.github.io/",
@@ -10,8 +10,8 @@ const PUBS = [
     title: "Task Allocation of UAVs for Monitoring Missions via Hardware-in-the-Loop Simulation and Experimental Validation",
     authors: ["H. Chakraa", "F. Guérin", "E. Leclercq", "D. Lefebvre"],
     venue: "IEEE Robotics and Automation Practice", short: "IEEE RA-P",
+    github: "", video: "",
     url: "https://ieeexplore.ieee.org/document/11753960", arxiv: "https://arxiv.org/abs/2506.20626",
-    video: "",  // e.g. YouTube link of the field / HIL video
     bib: `@article{chakraa2026task,
   author  = {Chakraa, Hamza and Gu{\\'e}rin, Fran{\\c{c}}ois and Leclercq, Edouard and Lefebvre, Dimitri},
   title   = {Task Allocation of {UAVs} for Monitoring Missions via Hardware-in-the-Loop Simulation and Experimental Validation},
@@ -22,6 +22,7 @@ const PUBS = [
     title: "A Multi-View Multi-LiDAR Synchronised Setup for Smoke Plume Data Acquisition: A Simulated Drone Swarm Observation Case Study",
     authors: ["G. Pérez", "L. Denis", "H. Chakraa", "M. Bronz"],
     venue: "17th International Micro Air Vehicle Conference and Competition (IMAV), Strasbourg, France", short: "IMAV",
+    url: "", github: "",
     bib: `@inproceedings{perez2026lidar,
   author    = {P{\\'e}rez, G. and Denis, L. and Chakraa, Hamza and Bronz, Murat},
   title     = {A Multi-View Multi-{LiDAR} Synchronised Setup for Smoke Plume Data Acquisition: A Simulated Drone Swarm Observation Case Study},
@@ -32,6 +33,7 @@ const PUBS = [
     title: "Decentralized PSO-Based Guidance for Multi-UAV Wildfire Monitoring and Frontier Tracking",
     authors: ["H. Chakraa", "M. Feurgard", "M. Bronz"],
     venue: "17th International Micro Air Vehicle Conference (IMAV), Strasbourg, France", short: "IMAV",
+    github: "", video: "",
     url: "https://www.imavs.org/pdf/imav.2026.18",
     bib: `@inproceedings{chakraa2026pso,
   author    = {Chakraa, Hamza and Feurgard, M. and Bronz, Murat},
@@ -43,6 +45,7 @@ const PUBS = [
     title: "A Preliminary Study on Smoke Plume Observation With Drone Swarms",
     authors: ["H. Chakraa", "M. Verdoucq", "J. Machado", "M. Bronz"],
     venue: "International Conference on Unmanned Aircraft Systems (ICUAS), Corfu, Greece", short: "ICUAS",
+    url: "", video: "",
     bib: `@inproceedings{chakraa2026smoke,
   author    = {Chakraa, Hamza and Verdoucq, Matthieu and Machado, Jo{\\~a}o and Bronz, Murat},
   title     = {A Preliminary Study on Smoke Plume Observation With Drone Swarms},
@@ -53,6 +56,7 @@ const PUBS = [
     title: "Accelerating Wildfire Spread Prediction for Guidance: A ConvLSTM Deep Learning Approach",
     authors: ["H. Chakraa", "M. Bronz"],
     venue: "AIAA SciTech Forum, Orlando, USA", short: "AIAA SciTech",
+    url: "", github: "", video: "",
     bib: `@inproceedings{chakraa2026convlstm,
   author    = {Chakraa, Hamza and Bronz, Murat},
   title     = {Accelerating Wildfire Spread Prediction for Guidance: A {ConvLSTM} Deep Learning Approach},
@@ -63,7 +67,7 @@ const PUBS = [
     title: "A Gossip-Based Approach for Measurement Task Allocation and Routing in Multi-Robot Systems with Heterogeneous Sensing",
     authors: ["H. Chakraa", "D. Deplano", "C. Seatzu", "D. Lefebvre", "M. Franceschelli"],
     venue: "21st IEEE International Conference on Automation Science and Engineering (CASE), Los Angeles, USA, pp. 2895–2900", short: "IEEE CASE",
-    url: "https://doi.org/10.1109/CASE58245.2025.11164022", code: "https://github.com/chakraah/gossip-planner",
+    url: "https://doi.org/10.1109/CASE58245.2025.11164022", github: "https://github.com/chakraah/gossip-planner",
     bib: `@inproceedings{chakraa2025gossip,
   author    = {Chakraa, Hamza and Deplano, Diego and Seatzu, Carla and Lefebvre, Dimitri and Franceschelli, Mauro},
   title     = {A Gossip-Based Approach for Measurement Task Allocation and Routing in Multi-Robot Systems with Heterogeneous Sensing},
@@ -76,6 +80,7 @@ const PUBS = [
     title: "Integrating Collision Avoidance Strategies into Multi-Robot Task Allocation for Inspection",
     authors: ["H. Chakraa", "E. Leclercq", "F. Guérin", "D. Lefebvre"],
     venue: "Transactions of the Institute of Measurement and Control, 47(7):1466–1477", short: "Trans. Inst. Meas. Control",
+    url: "",
     bib: `@article{chakraa2025collision,
   author  = {Chakraa, Hamza and Leclercq, Edouard and Gu{\\'e}rin, Fran{\\c{c}}ois and Lefebvre, Dimitri},
   title   = {Integrating Collision Avoidance Strategies into Multi-Robot Task Allocation for Inspection},
@@ -87,13 +92,14 @@ const PUBS = [
     title: "Optimization Techniques for Monitoring a High-Risk Industrial Area by a Team of Autonomous Mobile Robots",
     authors: ["H. Chakraa"],
     venue: "PhD thesis, Normandie Université (European label)", short: "PhD thesis",
+    url: "",
     bib: `@phdthesis{chakraa2024thesis,
   author = {Chakraa, Hamza},
   title  = {Optimization Techniques for Monitoring a High-Risk Industrial Area by a Team of Autonomous Mobile Robots},
   school = {Normandie Universit{\\'e}},
   year   = {2024}
 }` },
-  { id: "J1", type: "journal", year: 2023, selected: true,
+  { id: "J2", type: "journal", year: 2023, selected: true,
     title: "Optimization Techniques for Multi-Robot Task Allocation Problems: Review on the State-of-the-Art",
     authors: ["H. Chakraa", "F. Guérin", "E. Leclercq", "D. Lefebvre"],
     venue: "Robotics and Autonomous Systems, 168:104492", short: "Robot. Auton. Syst.",
@@ -106,10 +112,11 @@ const PUBS = [
   year    = {2023},
   doi     = {10.1016/j.robot.2023.104492}
 }` },
-  { id: "J2", type: "journal", year: 2023,
+  { id: "J1", type: "journal", year: 2023,
     title: "A Centralized Task Allocation Algorithm for a Multi-Robot Inspection Mission With Sensing Specifications",
     authors: ["H. Chakraa", "E. Leclercq", "F. Guérin", "D. Lefebvre"],
     venue: "IEEE Access, 11:99935–99949", short: "IEEE Access",
+    url: "https://ieeexplore.ieee.org/document/10250421", github: "",
     bib: `@article{chakraa2023centralized,
   author  = {Chakraa, Hamza and Leclercq, Edouard and Gu{\\'e}rin, Fran{\\c{c}}ois and Lefebvre, Dimitri},
   title   = {A Centralized Task Allocation Algorithm for a Multi-Robot Inspection Mission With Sensing Specifications},
@@ -121,6 +128,7 @@ const PUBS = [
     title: "A Multi-Robot Mission Planner by Means of Beam Search Approach and 2-Opt Local Search",
     authors: ["H. Chakraa", "E. Leclercq", "F. Guérin", "D. Lefebvre"],
     venue: "9th International Conference on Control, Decision and Information Technologies (CoDIT)", short: "CoDIT",
+    url: "https://doi.org/10.1109/CODIT58514.2023.10284492",
     bib: `@inproceedings{chakraa2023beam,
   author    = {Chakraa, Hamza and Leclercq, Edouard and Gu{\\'e}rin, Fran{\\c{c}}ois and Lefebvre, Dimitri},
   title     = {A Multi-Robot Mission Planner by Means of Beam Search Approach and 2-Opt Local Search},
@@ -137,12 +145,14 @@ const authorsHTML = a => a.map(n =>
   : n).join(", ");
 const mainLink = p => p.url || p.arxiv || null;
 
+/* empty link = button shown, link added later */
+const link = (u, label) => u ? `<a href="${u}" target="_blank" rel="noopener">${label}</a>` : `<a href="#" onclick="return false" class="todo">${label}</a>`;
 function actions(p) {
   let h = `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
-  if (p.url) h += `<a href="${p.url}" target="_blank" rel="noopener">Paper</a>`;
-  if (p.arxiv) h += `<a href="${p.arxiv}" target="_blank" rel="noopener">arXiv</a>`;
-  if (p.code) h += `<a href="${p.code}" target="_blank" rel="noopener">Code</a>`;
-  if (p.video) h += `<a href="${p.video}" target="_blank" rel="noopener">Video</a>`;
+  if (p.url !== undefined) h += link(p.url, "Paper");
+  if (p.arxiv !== undefined) h += link(p.arxiv, "arXiv");
+  if (p.github !== undefined) h += link(p.github, "GitHub");
+  if (p.video !== undefined) h += link(p.video, "Video");
   return `<div class="actions">${h}</div>`;
 }
 function titleHTML(p) {
@@ -154,7 +164,7 @@ function renderSelected(el) {
   el.innerHTML = PUBS.filter(p => p.selected).map(p => `
     <article class="sel t-${p.type}" data-id="${p.id}">
       <a class="page" href="${mainLink(p) || "publications.html#" + p.id}" ${mainLink(p) ? 'target="_blank" rel="noopener"' : ""} aria-label="${esc(p.title)}">
-        <img src="images/pubs/${p.id}.png" alt="" loading="lazy" onerror="this.remove()">
+        <img src="images/pubs/fig-${p.id}.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.closest('.sel').classList.add('is-page');this.src='images/pubs/${p.id}.png'}else{this.remove()}">
         <div class="mock" aria-hidden="true">
           <p class="m-title">${esc(p.title)}</p>
           <p class="m-auth">${p.authors.join(", ")}</p>
