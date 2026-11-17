@@ -9,7 +9,7 @@ const PUBS = [
   { id: "J4", type: "journal", year: 2026, selected: true,
     title: "Task Allocation of UAVs for Monitoring Missions via Hardware-in-the-Loop Simulation and Experimental Validation",
     authors: ["H. Chakraa", "F. Guérin", "E. Leclercq", "D. Lefebvre"],
-    venue: "IEEE Robotics and Automation Practice", short: "IEEE RA-P",
+    venue: "IEEE Robotics and Automation Practice", short: "IEEE RA-P", full: "IEEE Robotics and Automation Practice",
     github: "", video: "",
     url: "https://ieeexplore.ieee.org/document/11753960", arxiv: "https://arxiv.org/abs/2506.20626",
     bib: `@article{chakraa2026task,
@@ -32,7 +32,7 @@ const PUBS = [
   { id: "C5", type: "conference", year: 2026, selected: true,
     title: "Decentralized PSO-Based Guidance for Multi-UAV Wildfire Monitoring and Frontier Tracking",
     authors: ["H. Chakraa", "M. Feurgard", "M. Bronz"],
-    venue: "17th International Micro Air Vehicle Conference (IMAV), Strasbourg, France", short: "IMAV",
+    venue: "17th International Micro Air Vehicle Conference (IMAV), Strasbourg, France", short: "IMAV", full: "International Micro Air Vehicle Conference (IMAV)",
     github: "", video: "",
     url: "https://www.imavs.org/pdf/imav.2026.18",
     bib: `@inproceedings{chakraa2026pso,
@@ -66,7 +66,7 @@ const PUBS = [
   { id: "C2", type: "conference", year: 2025, selected: true,
     title: "A Gossip-Based Approach for Measurement Task Allocation and Routing in Multi-Robot Systems with Heterogeneous Sensing",
     authors: ["H. Chakraa", "D. Deplano", "C. Seatzu", "D. Lefebvre", "M. Franceschelli"],
-    venue: "21st IEEE International Conference on Automation Science and Engineering (CASE), Los Angeles, USA, pp. 2895–2900", short: "IEEE CASE",
+    venue: "21st IEEE International Conference on Automation Science and Engineering (CASE), Los Angeles, USA, pp. 2895–2900", short: "IEEE CASE", full: "IEEE International Conference on Automation Science and Engineering (CASE)",
     url: "https://doi.org/10.1109/CASE58245.2025.11164022", github: "https://github.com/chakraah/gossip-planner",
     bib: `@inproceedings{chakraa2025gossip,
   author    = {Chakraa, Hamza and Deplano, Diego and Seatzu, Carla and Lefebvre, Dimitri and Franceschelli, Mauro},
@@ -102,7 +102,7 @@ const PUBS = [
   { id: "J2", type: "journal", year: 2023, selected: true,
     title: "Optimization Techniques for Multi-Robot Task Allocation Problems: Review on the State-of-the-Art",
     authors: ["H. Chakraa", "F. Guérin", "E. Leclercq", "D. Lefebvre"],
-    venue: "Robotics and Autonomous Systems, 168:104492", short: "Robot. Auton. Syst.",
+    venue: "Robotics and Autonomous Systems, 168:104492", short: "Robot. Auton. Syst.", full: "Robotics and Autonomous Systems",
     url: "https://doi.org/10.1016/j.robot.2023.104492",
     bib: `@article{chakraa2023review,
   author  = {Chakraa, Hamza and Gu{\\'e}rin, Fran{\\c{c}}ois and Leclercq, Edouard and Lefebvre, Dimitri},
@@ -172,7 +172,7 @@ function renderSelected(el) {
         </div>
       </a>
       <div>
-        <p class="badge">${esc(p.short)} · ${p.year}</p>
+        <p class="badge">${esc(p.full || p.short)}, ${p.year}</p>
         <h3>${titleHTML(p)}</h3>
         <p class="authors">${authorsHTML(p.authors)}</p>
         ${actions(p)}

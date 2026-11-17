@@ -502,3 +502,6 @@ h2 { letter-spacing: -.024em; }
 .sel.is-page .page { aspect-ratio: 8.5/11; }
 .sel.is-page .page img { object-position: top; }
 @media (max-width: 640px) { .sel { grid-template-columns: 1fr !important; } .sel .page { max-width: 420px; } }
+
+/* Venue badge in Selected publications: normal case */
+.sel .badge { text-transform: none; letter-spacing: .01em; font-size: 13px; font-weight: 600; }
