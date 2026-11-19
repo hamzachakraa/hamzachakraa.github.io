@@ -1,5 +1,3 @@
-/* Publications: single source for the home page (selected) and publications.html (full list).
-   To add a paper: add an entry below. Links shown when set: url (Paper), arxiv, github, video. Empty strings = link to add. Optional thumbnail: images/pubs/<id>.png (first page of the paper, ~440x570). */
 const ME = "H. Chakraa";
 const COAUTHOR_LINKS = {
   "D. Deplano": "https://diegodeplano.github.io/",
@@ -137,7 +135,6 @@ const PUBS = [
 }` },
 ];
 
-/* ---------- rendering ---------- */
 const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const authorsHTML = a => a.map(n =>
   n === ME ? `<span class="me">${n}</span>`
@@ -145,7 +142,6 @@ const authorsHTML = a => a.map(n =>
   : n).join(", ");
 const mainLink = p => p.url || p.arxiv || null;
 
-/* empty link = button shown, link added later */
 const link = (u, label) => u ? `<a href="${u}" target="_blank" rel="noopener">${label}</a>` : `<a href="#" onclick="return false" class="todo">${label}</a>`;
 function actions(p) {
   let h = `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
