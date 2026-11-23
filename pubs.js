@@ -145,7 +145,7 @@ const mainLink = p => p.url || p.arxiv || null;
 const link = (u, label) => u ? `<a href="${u}" target="_blank" rel="noopener">${label}</a>` : `<a href="#" onclick="return false" class="todo">${label}</a>`;
 function actions(p) {
   let h = `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
-  if (p.url !== undefined) h += link(p.url, "Paper");
+  if (p.url !== undefined) h += link(p.url, "Manuscript");
   if (p.arxiv !== undefined) h += link(p.arxiv, "arXiv");
   if (p.github !== undefined) h += link(p.github, "GitHub");
   if (p.video !== undefined) h += link(p.video, "Video");
