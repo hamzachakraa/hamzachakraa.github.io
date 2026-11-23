@@ -5,7 +5,7 @@
 @font-face { font-family: "Source Sans 3"; font-weight: 700; font-display: swap; src: url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2"); }
 
 :root {
-  --bg: #ffffff;
+  --bg: #eef5f1;
   --surface: #ffffff;
   --text: #17222b;
   --muted: #5f6b76;
