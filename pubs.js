@@ -159,7 +159,7 @@ function titleHTML(p) {
 function renderSelected(el) {
   el.innerHTML = PUBS.filter(p => p.selected).map(p => `
     <article class="sel t-${p.type}" data-id="${p.id}">
-      <a class="page" href="${mainLink(p) || "publications.html#" + p.id}" ${mainLink(p) ? 'target="_blank" rel="noopener"' : ""} aria-label="${esc(p.title)}">
+      <a class="page" href="${mainLink(p) || "research.html#" + p.id}" ${mainLink(p) ? 'target="_blank" rel="noopener"' : ""} aria-label="${esc(p.title)}">
         <img src="images/pubs/fig-${p.id}.jpg" alt="" loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.closest('.sel').classList.add('is-page');this.src='images/pubs/${p.id}.png'}else{this.remove()}">
         <div class="mock" aria-hidden="true">
           <p class="m-title">${esc(p.title)}</p>
@@ -177,23 +177,27 @@ function renderSelected(el) {
     </article>`).join("");
 }
 
+const TYPE_LABEL = { journal: "Journal", conference: "Conference", thesis: "Thesis" };
 function renderAll(el) {
-  const groups = [["journal", "Journal articles"], ["conference", "Conference papers"], ["thesis", "Thesis"]];
-  el.innerHTML = groups.map(([k, label]) => {
-    const items = PUBS.filter(p => p.type === k);
-    if (!items.length) return "";
-    return `<section class="pub-group"><h2>${label}</h2><ol class="pub-list">` + items.map(p => `
+  const input = document.getElementById("pub-search");
+  const draw = () => {
+    const q = (input ? input.value : "").trim().toLowerCase();
+    const items = PUBS.filter(p => !q || [p.title, p.venue, p.authors.join(" ")].join(" ").toLowerCase().includes(q));
+    if (!items.length) { el.innerHTML = `<p class="empty">No papers match your search.</p>`; return; }
+    const years = [...new Set(items.map(p => p.year))].sort((a, b) => b - a);
+    el.innerHTML = years.map(y => `<div class="pub-year"><h3>${y}</h3><ol class="pub-list">` + items.filter(p => p.year === y).map(p => `
       <li id="${p.id}" data-id="${p.id}" class="t-${p.type}">
-        <span class="label">[${p.id}]</span>
-        <div>
-          <p class="t">${titleHTML(p)}</p>
-          <p class="authors">${authorsHTML(p.authors)}</p>
-          <p class="venue"><i>${esc(p.venue)}</i>, ${p.year}</p>
-          ${actions(p)}
-          <pre class="bib" hidden>${esc(p.bib)}</pre>
-        </div>
-      </li>`).join("") + `</ol></section>`;
-  }).join("");
+        <p class="pub-meta"><span class="pub-type">${TYPE_LABEL[p.type] || p.type}</span> ${esc(p.short || p.venue)}</p>
+        <p class="t">${titleHTML(p)}</p>
+        <p class="authors">${authorsHTML(p.authors)}</p>
+        <p class="venue"><i>${esc(p.venue)}</i>, ${p.year}</p>
+        ${actions(p)}
+        <pre class="bib" hidden>${esc(p.bib)}</pre>
+      </li>`).join("") + `</ol></div>`).join("");
+  };
+  draw();
+  if (input) input.addEventListener("input", draw);
+  if (location.hash) { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
 }
 
 document.addEventListener("click", e => {
