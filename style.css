@@ -5,7 +5,7 @@
 @font-face { font-family: "Source Sans 3"; font-weight: 700; font-display: swap; src: url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2"); }
 
 :root {
-  --bg: #f4f6f9;
+  --bg: #ffffff;
   --surface: #ffffff;
   --text: #17222b;
   --muted: #5f6b76;
@@ -227,3 +227,7 @@ pre.bib { background: var(--surface); border: 1px solid var(--line); }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .tag { padding: 2px 11px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; color: #7a5228; background: #f5ebdf; }
+
+.container { max-width: 920px; }
+.links { gap: 6px; flex-wrap: wrap; }
+.links a { padding: 3px 11px; }
