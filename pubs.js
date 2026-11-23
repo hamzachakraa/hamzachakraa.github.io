@@ -144,8 +144,9 @@ const mainLink = p => p.url || p.arxiv || null;
 
 const link = (u, label) => u ? `<a href="${u}" target="_blank" rel="noopener">${label}</a>` : `<a href="#" onclick="return false" class="todo">${label}</a>`;
 function actions(p) {
-  let h = `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
-  if (p.url !== undefined) h += link(p.url, "Manuscript");
+  let h = "";
+  if (p.url !== undefined) h += link(p.url, "Manuscript").replace("<a ", '<a class="ms" ');
+  h += `<button type="button" class="bib-btn" aria-expanded="false">BibTeX</button>`;
   if (p.arxiv !== undefined) h += link(p.arxiv, "arXiv");
   if (p.github !== undefined) h += link(p.github, "GitHub");
   if (p.video !== undefined) h += link(p.video, "Video");
@@ -187,10 +188,9 @@ function renderAll(el) {
     const years = [...new Set(items.map(p => p.year))].sort((a, b) => b - a);
     el.innerHTML = years.map(y => `<div class="pub-year"><h3>${y}</h3><ol class="pub-list">` + items.filter(p => p.year === y).map(p => `
       <li id="${p.id}" data-id="${p.id}" class="t-${p.type}">
-        <p class="pub-meta"><span class="pub-type">${TYPE_LABEL[p.type] || p.type}</span> ${esc(p.short || p.venue)}</p>
+        <p class="pub-meta">${esc(p.venue)}</p>
         <p class="t">${titleHTML(p)}</p>
         <p class="authors">${authorsHTML(p.authors)}</p>
-        <p class="venue"><i>${esc(p.venue)}</i>, ${p.year}</p>
         ${actions(p)}
         <pre class="bib" hidden>${esc(p.bib)}</pre>
       </li>`).join("") + `</ol></div>`).join("");
