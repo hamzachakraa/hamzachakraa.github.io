@@ -1,3 +1,7 @@
+@font-face { font-family: "DM Sans"; font-weight: 400; font-display: swap; src: url(fonts/dm-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "DM Sans"; font-weight: 500; font-display: swap; src: url(fonts/dm-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "DM Sans"; font-weight: 600; font-display: swap; src: url(fonts/dm-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "DM Sans"; font-weight: 700; font-display: swap; src: url(fonts/dm-sans-latin-700-normal.woff2) format("woff2"); }
 @font-face { font-family: "Space Grotesk"; font-weight: 600; font-display: swap; src: url(fonts/space-grotesk-latin-600-normal.woff2) format("woff2"); }
 @font-face { font-family: "Source Sans 3"; font-weight: 400; font-display: swap; src: url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2"); }
 @font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/source-sans-3-latin-400-italic.woff2) format("woff2"); }
@@ -231,3 +235,51 @@ pre.bib { background: var(--surface); border: 1px solid var(--line); }
 .container { max-width: 920px; }
 .links { gap: 6px; flex-wrap: wrap; }
 .links a { padding: 3px 11px; }
+
+:root { --bg:#f3f4f5; --surface:#ffffff; --text:#0f1113; --muted:#3d4247; --line:#d9dcdf;
+  --accent:#1f5e99; --accent-dark:#164673; --accent-soft:#e4edf7; --warm:#1f5e99;
+  --sans:"DM Sans", system-ui, sans-serif; }
+body { font-family:var(--sans); font-size:16.5px; line-height:1.7; letter-spacing:-.003em; -webkit-font-smoothing:auto; }
+.site-header { background:#ffffff; border-bottom:1px solid var(--line); }
+.u2is-text { color:#0f1113; }
+.brand-inst { color:#3d4247; }
+.site-nav a { color:#3d4247; font-weight:500; } .site-nav a:hover { color:#1f5e99; }
+.site-nav a[aria-current="page"] { color:#0f1113; font-weight:600; }
+.site-nav a[aria-current="page"]::after { background:#1f5e99; }
+.profile h1, h2, .page-head h1, .page-title, .pub-year h3, .people b { color:#0f1113; }
+.role { color:#fff; background:#1f5e99; }
+.tag, .two-col > div:nth-child(2) .chips li, .chips li { color:#164673; background:#e4edf7; }
+.tags, .tag { font-weight:600; }
+.photo { border-color:#fff; box-shadow:0 12px 28px -16px rgba(0,0,0,.35); }
+.links a, .actions button, .actions a { color:#1b1e21; background:#fff; border-color:#cdd1d5; font-weight:500; }
+.links a:hover, .actions button:hover, .actions a:hover, .actions button.on { color:#fff; background:#1f5e99; border-color:#1f5e99; }
+.actions .bib-btn { color:#fff; background:#1f5e99; border-color:#1f5e99; }
+.news-list time { color:#1f5e99; background:transparent; padding:0; font-size:12.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+.news-list li { border-left:3px solid #1f5e99; padding-left:14px; margin-bottom:10px; }
+.news-list p, .bio p { color:#1b1e21; }
+.authors { color:#4a5056; } .authors .me { color:#0f1113; }
+.badge, .pub-meta, .more { color:#1f5e99; }
+.pub-type, .t-conference .pub-type, .t-thesis .pub-type { color:#164673; background:#e4edf7; }
+.site-footer { background:#ffffff; border-top:1px solid var(--line); }
+.foot { color:#3d4247; }
+a { text-decoration-color: color-mix(in srgb, #1f5e99 45%, transparent); }
+
+:root { --sans:"DM Sans", system-ui, sans-serif; --display:"DM Sans", system-ui, sans-serif; }
+.profile h1, h2, .page-head h1, .page-title, .pub-year h3, .site-title { font-family:var(--display); font-weight:700; }
+.news-list li { grid-template-columns: 92px 1fr; }
+.news-list p { font-size:15.5px; }
+
+:root { --bg:#ffffff; --text:#0a0a0a; --muted:#33383d; --line:#e2e4e7; }
+body { font-weight:500; color:var(--text); -webkit-font-smoothing:antialiased; }
+.bio p, .news-list p { color:#0a0a0a; }
+.news-list strong, .bio strong { font-weight:700; }
+.authors { color:#3a3f44; font-weight:500; }
+.authors .me { font-weight:700; }
+.sel h3, .pub-list .t { font-weight:700; }
+.pub-list .venue, .tags, .brand-inst, .site-nav a, .foot { color:#33383d; }
+.site-nav a { font-weight:500; }
+.site-nav a[aria-current="page"] { font-weight:700; }
+.links a, .actions button, .actions a { font-weight:600; border-color:#c9cdd2; }
+.chips li { font-weight:500; }
+.empty { border-color:#cfd4d9; background:#ffffff; }
+.pub-search { border-color:#c9cdd2; }
